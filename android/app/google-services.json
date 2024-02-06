@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437882759752",
+    "project_id": "blind-assist-4f702",
+    "storage_bucket": "blind-assist-4f702.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437882759752:android:b10603ec0ab0cc2bf2467d",
+        "android_client_info": {
+          "package_name": "com.example.blind_assist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeGF9rp8s1h8YlZgZTQXNxYBVN6Q44fyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
