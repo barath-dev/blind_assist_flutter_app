@@ -1,4 +1,4 @@
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -113,9 +113,7 @@ class _RemainderScreenState extends State<RemainderScreen> {
               ),
               Expanded(
                 child: InkWell(
-                  onTap: () {
-                    
-                  },
+                  onTap: () {},
                   child: Container(
                       height: 200,
                       decoration: BoxDecoration(

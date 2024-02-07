@@ -10,17 +10,21 @@ class GeminiService {
     late String res;
     await gemini
         .generateFromTextAndImages(
-            query: "What is the denomination of currency?", image: image)
+            query:
+                "What is the denomination of currency? The response format should be: This is a [denomination] rupee note, if there is no currency fount the response should be: No currencies found",
+            image: image)
         .then((value) => res = value.text)
         .catchError((e) => res = e.toString());
     return res;
   }
 
-  Future<String> expiryFinder(File image) async{
+  Future<String> expiryFinder(File image) async {
     late String res;
     await gemini
         .generateFromTextAndImages(
-            query: "What is the expiry date mentioned in the image? give the response in words", image: image)
+            query:
+                "What is the expiry date mentioned in the image? give the response in words, if there is no epiry date found in the image the response should be: No expiry date found",
+            image: image)
         .then((value) => res = value.text)
         .catchError((e) => res = e.toString());
     return res;

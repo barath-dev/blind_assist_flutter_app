@@ -1,4 +1,4 @@
-# blind_assist
+# EchoVision
 
 A new Flutter project.
 

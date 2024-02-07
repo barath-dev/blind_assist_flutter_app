@@ -1,4 +1,4 @@
-package com.example.blind_assist
+package com.example.EchoVision
 
 import io.flutter.embedding.android.FlutterActivity
 

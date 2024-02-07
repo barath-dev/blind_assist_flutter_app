@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 
     <application
-        android:label="blind_assist"
+        android:label="EchoVision"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

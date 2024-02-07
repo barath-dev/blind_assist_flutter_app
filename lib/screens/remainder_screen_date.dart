@@ -1,4 +1,4 @@
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -20,8 +20,7 @@ class _RemainderScreenDateState extends State<RemainderScreenDate> {
 
   @override
   void initState() {
-    TTS().speak(
-        text: 'On which date you want th remainder to be set');
+    TTS().speak(text: 'On which date you want th remainder to be set');
     super.initState();
     _initSpeech();
   }
@@ -113,7 +112,7 @@ class _RemainderScreenDateState extends State<RemainderScreenDate> {
               ),
               Expanded(
                 child: InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Container(
                       height: 200,
                       decoration: BoxDecoration(

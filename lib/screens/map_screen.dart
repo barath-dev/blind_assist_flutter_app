@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, unused_field, unused_element, avoid_print
 
-import 'package:blind_assist/services/tts_service.dart';
-import 'package:blind_assist/widgets/mic.dart';
+import 'package:EchoVision/services/tts_service.dart';
+import 'package:EchoVision/widgets/mic.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -28,7 +28,9 @@ class _MapScreenState extends State<MapScreen> {
     }
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
-      TTS().speak(text: 'Location permissions are requested , allow the app to access the location');
+      TTS().speak(
+          text:
+              'Location permissions are requested , allow the app to access the location');
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         ScaffoldMessenger.of(context).showSnackBar(

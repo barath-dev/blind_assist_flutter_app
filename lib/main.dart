@@ -1,5 +1,5 @@
-import 'package:blind_assist/firebase_options.dart';
-import 'package:blind_assist/screens/home_screen.dart';
+import 'package:EchoVision/firebase_options.dart';
+import 'package:EchoVision/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

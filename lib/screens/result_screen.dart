@@ -2,8 +2,8 @@
 
 import 'dart:io';
 
-import 'package:blind_assist/services/gemini_service.dart';
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/services/gemini_service.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -22,13 +22,14 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   String result = "Loading...";
-  void _getMedicine() async {
-    result =await GeminiService().expiryFinder(widget.image);
+  Future<String> _getMedicine() async {
+    result = await GeminiService().expiryFinder(widget.image);
     TTS().speak(text: result);
+    return result;
   }
 
   Future<String> _getCurrency() async {
-    result =await GeminiService().currencyFinder(widget.image);
+    result = await GeminiService().currencyFinder(widget.image);
     return result;
   }
 
@@ -36,7 +37,9 @@ class _ResultScreenState extends State<ResultScreen> {
   void initState() {
     super.initState();
     if (widget.isMedicine) {
-      _getMedicine();
+      _getMedicine().then((value) => setState(() {
+            result = value;
+          }));
     } else {
       _getCurrency().then((value) => setState(() {
             result = value;

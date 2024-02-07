@@ -1,10 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, use_build_context_synchronously
 
-import 'package:blind_assist/screens/map_screen.dart';
-import 'package:blind_assist/screens/remainder_screen_title.dart';
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/screens/map_screen.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
-import 'package:blind_assist/screens/img_recognizer.dart';
+import 'package:EchoVision/screens/img_recognizer.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,11 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: GestureDetector(
             onPanUpdate: (details) async {
               // Swiping in right direction.
-              if (details.delta.dx > 0) {
-                TTS().speak(text: 'Opening remainder screen');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RemainderScreen()));
-              }
+              // if (details.delta.dx > 0) {
+              //   TTS().speak(text: 'Opening remainder screen');
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => RemainderScreen()));
+              // }
 
               // Swiping in left direction.
               if (details.delta.dx < 0) {
@@ -65,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onLongPress: () {
                 TTS().speak(
                     text:
-                        'single tap on the screen for currency identifier, , double tap on the screen for expity finder,, swipe right on the screen for remainder screen, swipe left on the screen for map screen');
+                        'single tap on the screen for currency identifier, , double tap on the screen for expity finder,, swipe left on the screen for map screen');
               },
               onDoubleTap: () {
                 TTS().speak(

@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';

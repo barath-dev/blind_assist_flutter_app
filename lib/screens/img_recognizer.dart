@@ -2,12 +2,12 @@
 
 import 'dart:io';
 
-import 'package:blind_assist/resources/storagemethods.dart';
+import 'package:EchoVision/resources/storagemethods.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
-import 'package:blind_assist/screens/result_screen.dart';
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/screens/result_screen.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ImgRocog extends StatefulWidget {

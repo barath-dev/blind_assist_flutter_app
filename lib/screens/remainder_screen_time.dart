@@ -1,4 +1,4 @@
-import 'package:blind_assist/services/tts_service.dart';
+import 'package:EchoVision/services/tts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -20,8 +20,7 @@ class _RemainderScreenTimeState extends State<RemainderScreenTime> {
 
   @override
   void initState() {
-    TTS().speak(
-        text: 'Tell the time of the remainder to be set');
+    TTS().speak(text: 'Tell the time of the remainder to be set');
     super.initState();
     _initSpeech();
   }
