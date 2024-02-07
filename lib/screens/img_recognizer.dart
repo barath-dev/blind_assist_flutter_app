@@ -1,10 +1,12 @@
 // ignore_for_file: unused_field, unused_element, dead_code, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously, no_logic_in_create_state, avoid_unnecessary_containers
 
 import 'dart:io';
+import 'dart:math';
 
 import 'package:EchoVision/resources/storagemethods.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:EchoVision/screens/result_screen.dart';
 import 'package:EchoVision/services/tts_service.dart';
@@ -21,10 +23,19 @@ class ImgRocog extends StatefulWidget {
 }
 
 class _ImgRocogState extends State<ImgRocog> with WidgetsBindingObserver {
+  Future<XFile?> compressAndGetFile(File file, String targetPath) async {
+    var result = await FlutterImageCompress.compressAndGetFile(
+      file.absolute.path,
+      targetPath,
+      quality: 88,
+      rotate: 180,
+    );
+    return result;
+  }
+
   bool _isPermissionGranted = false;
   late final Future<void> _future;
   CameraController? _cameraController;
-
   final _textRecognizer = TextRecognizer();
 
   Future<void> _requestCameraPermission() async {
@@ -81,10 +92,10 @@ class _ImgRocogState extends State<ImgRocog> with WidgetsBindingObserver {
 
     try {
       _cameraController?.setFlashMode(FlashMode.off);
-      _cameraController?.setFocusMode(FocusMode.auto);
       final pictureFile = await _cameraController!.takePicture();
       // pictureFile.saveTo("/storage/emulated/temp/");
-
+      // final compressedFile =
+      //     await compressAndGetFile(File(pictureFile.path), pictureFile.path);
       final file = File(pictureFile.path);
       final url =
           await StorageMethods().uploadImagetoStorage(file.readAsBytesSync());
@@ -102,7 +113,7 @@ class _ImgRocogState extends State<ImgRocog> with WidgetsBindingObserver {
   Future<void> _cameraSelected(CameraDescription camera) async {
     _cameraController = CameraController(
       camera,
-      ResolutionPreset.max,
+      ResolutionPreset.medium,
     );
 
     await _cameraController?.initialize();
