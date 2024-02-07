@@ -81,6 +81,7 @@ class _ImgRocogState extends State<ImgRocog> with WidgetsBindingObserver {
 
     try {
       _cameraController?.setFlashMode(FlashMode.off);
+      _cameraController?.setFocusMode(FocusMode.auto);
       final pictureFile = await _cameraController!.takePicture();
       // pictureFile.saveTo("/storage/emulated/temp/");
 

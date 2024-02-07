@@ -30,6 +30,7 @@ class _ResultScreenState extends State<ResultScreen> {
 
   Future<String> _getCurrency() async {
     result = await GeminiService().currencyFinder(widget.image);
+    TTS().speak(text: result);
     return result;
   }
 
